@@ -1,14 +1,30 @@
+
+// to render a form for adding a new habit 
+
+// importing react hooks
 import { useEffect, useState } from "react";
+
+// redux hooks
 import { useDispatch, useSelector } from "react-redux";
+
+// habitReducer actions and state
 import { addHabit, habitSelector, setSuggestionSelected } from "../Redux/Reducer/habitReducer";
 
 // for toast notifications
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
+// render the section
 const AddHabit = () => {
+    // for calling an action
     const dispatch = useDispatch();
+
+    // state variables of habitReducer for getting list of all the habits and to know if user clicked on a habit { in suggestion list}
     const { habits,suggestionSelected } = useSelector(habitSelector);
+
+    // name of habit entered inside the input tag of form
     const [habitName,setHabitName] = useState('');
 
 
@@ -23,7 +39,10 @@ const AddHabit = () => {
 
     // when user click on add habit button / submit the form
     const handleSubmit = (e) => {
-        e.preventDefault(); // prevent the default action of button
+        // prevent the default action of button
+        e.preventDefault();
+
+        // getting current date to store the creation date
         const newDate =  new Date().toString();
 
         // create an array representing seven days of weeks
@@ -31,11 +50,15 @@ const AddHabit = () => {
         const weekStatus = Array(7).fill(null);
         
 
-        
+        // structure of data to be store inside the habit list
         const data = {
+            // id of habit { length of habit list array}
             id:habits.length,
+            // name of habit
             name:habitName,
+            // days on which the habit is completed { initially zero }
             completedDays:0,
+            // creation date
             createdOn:`${newDate.slice(4,15)}`,
             // url of icon related to the selected habit
             // if habit is selected from the suggestion list then store that icon , else provide a default habit icon
@@ -44,8 +67,11 @@ const AddHabit = () => {
             weekStatus:weekStatus
         };
 
+        // call action to add the habit to habit list array
         dispatch(addHabit(data));
+        // set the selected suggestion to null so that user can selected new suggestion for adding new habit
         dispatch(setSuggestionSelected(null));
+        // set input tag's value ' '
         setHabitName('');
         // toast notification 
         toast.success('New Habit is Added !!');

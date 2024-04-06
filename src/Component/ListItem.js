@@ -1,7 +1,16 @@
+
+// to render a single list item of suggestion habit list on home page
+
+// redux  hook
 import { useDispatch } from "react-redux";
+
+// action to store data of selected habit from the suggestion list
 import { setSuggestionSelected } from "../Redux/Reducer/habitReducer";
 
+
+// component to render the single item
 const ListItem = (props) => {
+    // for calling the action
     const dispatch = useDispatch();
 
     // getting habit name and icon url from the props
@@ -36,4 +45,6 @@ const ListItem = (props) => {
     )
 }
 
+
+// export the component
 export default ListItem;

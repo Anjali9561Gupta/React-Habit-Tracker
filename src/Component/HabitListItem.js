@@ -1,11 +1,20 @@
+
+// to render a single list item inside the habitList.js file
+
+
+// redux hook
 import { useDispatch } from "react-redux";
+
+// function to show status of a selected habit from the habit list on DetailsPage
 import { setShowStatus } from "../Redux/Reducer/habitReducer";
 
 
 // for render the section
 const HabitListItem = (props) => {
-  
+    // for calling reducer actions
     const dispatch = useDispatch();
+
+    // getting values of habit from the props
     const {name,completedDays,url} = props.habit;
 
 
@@ -39,4 +48,5 @@ const HabitListItem = (props) => {
 }
 
 
+// export the component
 export default HabitListItem;

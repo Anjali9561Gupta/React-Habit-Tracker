@@ -1,4 +1,12 @@
+
+// to render a small card containing a specifice date and status of habit on that particular day
+
+
+// render the component
 const SingleDayStatus = ({day,i,status,toggleStatus}) => {
+    /* getting value of the day, index of habit in the habit list, status of habit {done, not done, pending}
+        function to change the status of habit from the props */
+
 
     // render the card
     return(
@@ -44,5 +52,5 @@ const SingleDayStatus = ({day,i,status,toggleStatus}) => {
 }
 
 
-
+// export the component
 export default SingleDayStatus;

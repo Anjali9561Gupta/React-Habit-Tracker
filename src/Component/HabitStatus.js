@@ -1,16 +1,30 @@
+
+// to show weekly status of any habit from user's habit list 
+
+// redux hooks
 import { useDispatch, useSelector } from "react-redux";
+
+// to navigate to a new route
 import { NavLink } from "react-router-dom";
+
+// selector and action from habitReducer
 import { habitSelector, setShowStatus } from "../Redux/Reducer/habitReducer";
+
+// component to show weekly status of any habit
 import WeekStatus from "./WeekStatus";
 
 
 // to get list of all the days and dates in last week
 const CalculateDayOfWeek = (date) => {
+    // array storing all the dates and day
     var days = new Array();
+    // storing values in asceding order of date
     for (var i = 6; i >= 0; i--){
+        // store values in the form of string
         days[6-i] = new Date(date.getFullYear(), date.getMonth(), date.getDate() - i).toString();
         days[6-i] = `${days[6-i].slice(0,4)}, ${days[6-i].slice(4,15)}`;
     }
+    // return the array of dates
     return days;
 }
 
@@ -18,13 +32,19 @@ const CalculateDayOfWeek = (date) => {
 
 // render the section
 const HabitStatus = () => {
+    // for calling an action from reducer
     const dispatch = useDispatch();
+
+    // getting state variables from the habitReducer
     const { habits, showStatus } = useSelector(habitSelector);
+
+    // getting list of all week days and dates
     const weekDays = CalculateDayOfWeek(new Date());
 
     // for hiding the weekly status section from screen
     const handleCloseClick = (e) => {
         e.preventDefault();
+        // removing the value of selected item from variable on closing the section
         dispatch(setShowStatus(null));
     }
 
@@ -121,5 +141,5 @@ const HabitStatus = () => {
 }
 
 
-
+// export the component
 export default HabitStatus;

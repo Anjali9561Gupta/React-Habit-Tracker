@@ -1,15 +1,26 @@
+
+// show the list of all the habits selected by a user on DetailsPage
+
+// redux hook
 import { useSelector } from "react-redux";
+
+// selector to access the habitReducer state
 import { habitSelector } from "../Redux/Reducer/habitReducer";
+
+// component to show a single habit from the habit list of user
 import HabitListItem from "./HabitListItem";
 
 
 // render the list section 
 const HabitList = () => {
+
+    // getting list of habits choosen by a user
     const { habits } = useSelector(habitSelector);
 
     // render section
     return(
         // main container
+        // hidden on screen below the "medium width"
         <div className="hidden md:block  w-1/3 h-full bg-fixed overflow-scroll">
 
             {/* navbar in the list showing heading */}
@@ -34,4 +45,5 @@ const HabitList = () => {
     )
 }
 
+// export the component
 export default HabitList;

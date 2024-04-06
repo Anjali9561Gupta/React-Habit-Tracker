@@ -1,3 +1,5 @@
+
+// get list of predefined habits inside the local data files { data folder }
 import { SuggestedHabit } from "../Data/SuggestedHabit";
 
 // to render a single list item on the screen

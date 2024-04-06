@@ -1,10 +1,28 @@
+
+// to show weekly status of a habit selected by user 
+
+
+// redux hook
 import { useDispatch } from "react-redux";
-import { toggleHabitStatus } from "../Redux/Reducer/habitReducer";s 
+
+// reducer action to change status of a habit {done, not done, pending}
+import { toggleHabitStatus } from "../Redux/Reducer/habitReducer";
+
+// to render a single day habit status 
 import SingleDayStatus from "./SingleDayStatus";
+
+// to show toast notification
 import { toast } from "react-toastify";
 
 
+
+// render the component
+/* getting value of { habitIndex = index of habit inside the habit array, 
+    handleClose function to hide the component, showStatus = to show status of a habit, 
+    weekDays = array of all the days in the week }  from the props*/
 const WeekStatus = ({habitIndex,handleCloseClick,showStatus,weekDays}) => {
+
+    // for calling an action
     const dispatch = useDispatch();
 
     // change the status of a habit on a single day {done, not done, pending}
@@ -74,5 +92,5 @@ const WeekStatus = ({habitIndex,handleCloseClick,showStatus,weekDays}) => {
 }
 
 
-
+// export the component
 export default WeekStatus;

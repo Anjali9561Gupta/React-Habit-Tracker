@@ -1,4 +1,11 @@
+
+// to render the Navbar at the top of the screen 
+
+
+// react hooks
 import { useState } from "react";
+
+// react-router components to navigate to a link or to show children component of page
 import { NavLink, Outlet } from "react-router-dom";
 
 
@@ -7,6 +14,9 @@ const Navbar = () => {
 
     // to show / hide a menu icon on smaller screen, instead of navigating links
     const [showMenu,setShowMenu] = useState(false);
+
+
+    // toggle the show / hide of menu icon of smaller screen
     const toggleShowMenu = () => {
         setShowMenu((prev) => !prev);
     }
@@ -111,4 +121,5 @@ const Navbar = () => {
     )
 }
 
+// export the navbar component
 export default Navbar;

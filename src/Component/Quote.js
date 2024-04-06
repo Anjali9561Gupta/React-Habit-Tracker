@@ -1,7 +1,15 @@
+
+// to show a quote on the homepage
+
+
+// redux hook to access the reducer state
 import { useSelector } from "react-redux";
+
+// habitReducer's state
 import { habitSelector } from "../Redux/Reducer/habitReducer";
 
 
+// render the quote component
 const Quote = () => {
 
     // get the quote from the reducer state variable
@@ -33,5 +41,5 @@ const Quote = () => {
 }
 
 
-
+// export the component
 export default Quote;
