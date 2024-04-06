@@ -1,7 +1,7 @@
 # Habit Tracker Project
-  This is a habit tracker project of Coding Ninjas made using Reactjs, Redux toolkit, React-router-dom. User can add multiple habits to their list, and can check their weekly status of habit (done, not done, pending). The following project is styled using TailwindCSS. User will get a different motivational quote on homepage every time he visit to the homepage, also a differnet image.
+  This is a habit tracker project of Coding Ninjas made using Reactjs, Redux toolkit, React-router-dom. User can add multiple habits to their list, and can check their weekly status of habit (done, not done, pending). The following project is styled using TailwindCSS. User will get a different motivational quote on homepage every time he visit to the homepage, also a different image.
   
-  YouTube LINK-
+  YouTube LINK->https://www.youtube.com/watch?v=1A3l9hWUZ9c
   <br>
   Go Live to -> https://react-habit-tracker-pi.vercel.app/
   <br>
@@ -34,5 +34,4 @@
   - JavaScript
   - HTML.
 
-# ScreenShots:
-Will be added soon.
+
