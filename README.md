@@ -3,9 +3,9 @@
   
   YouTube LINK-
   <br>
-  Go Live to [Habit-Tracker]https://react-habit-tracker-pi.vercel.app/
+  Go Live to -> https://react-habit-tracker-pi.vercel.app/
   <br>
-  Quotes are fetched using following api: https://type.fit/api/quotes
+  Quotes are fetched using following api-> https://type.fit/api/quotes
 
 # Features:
   - Add Multiple habits to your habit list.
